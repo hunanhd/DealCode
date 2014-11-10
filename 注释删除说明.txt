@@ -1,0 +1,12 @@
+1.目前支持去掉.h  .hpp  .c  .cpp  .java 这些以//或/**/为注释符的源文件
+
+2.支持递归遍历目录
+
+3.当前版本为Python2.7版本，故只有安装了Python2.7（或Python3.x以下版本的才可以直接使用，测试没问题后将编出exe直接使用）
+
+4.使用方法：
+  (1)建立源目录，如d:\src（路径中最好不要有中文）；
+  (2)建立目标目录，如d:\dst（路径中最好不要有中文）；
+  (3)将RemoveComment.py放到某处（路径中最好不要有中文），如d:\RemoveComment.py
+  (4)打开cmd,输入切换到(3)中RemoveComment.py所在的目录（这里是d:\），输入python RemoveComment.py d:\src d:\dst,回车
+  (5)去掉了注释的源代码将放在d:\dst目录中
