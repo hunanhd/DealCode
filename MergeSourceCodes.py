@@ -4,7 +4,7 @@ import os
 
 # 要搜索的路径
 #dir = "C:\\Users\\anheihb03dlj\\Desktop\\ARX_MVSS"
-source_code_dir = ".\TIDS"
+source_code_dir = ".\GDES"
 # 或者
 #如下代码也是等效的
 #source_code_dir = "ARX_MVSS"

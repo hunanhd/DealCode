@@ -4,7 +4,7 @@ import os
 
 # 要搜索的路径
 #dir = "C:\\Users\\anheihb03dlj\\Desktop\\ARX_MVSS"
-dir = "TIDS"
+dir = "GDES"
 
 # 输出文件路径
 #outFilePath = "C:\\Users\\anheihb03dlj\\Desktop\\目录结构.txt"
@@ -54,6 +54,18 @@ def WriteSourceFile(filePath):
     # 关闭文件
     inFile.close()
 
+def IsSpecialFolder(folderName):
+    if cmp('Win32',folderName) == 0 or\
+    cmp('X64',folderName) == 0 or\
+    cmp('Debug',folderName) == 0 or\
+    cmp('Release',folderName) == 0 or\
+    cmp('win32',folderName) == 0 or\
+    cmp('x64',folderName) == 0 or\
+    cmp('debug',folderName) == 0 or\
+    cmp('release',folderName) == 0:
+        return True
+    return False
+
 def WalkFilesInChildDir(child_dir, ext):
     for root, dirs, files in os.walk(child_dir):
         for f in files:
@@ -66,7 +78,9 @@ for root, dirs, files in os.walk(dir):
     print "根目录:", root
     if cmp(root.upper(), dir.upper()) == 0: continue
 
-    outFile.write(os.path.split(root)[1]+"\n")
+    folderName = os.path.split(root)[1]
+    if IsSpecialFolder(folderName): continue
+    outFile.write(folderName+"\n")
     # 写入头文件
     outFile.write("  头文件\n")
     WalkFilesInChildDir(root, "h")

@@ -1,0 +1,5 @@
+1.用项目中的clean.bat清理项目
+2.执行RemoveComment.py处理注释
+3.执行DealTmp.py清理空文件和文件夹
+4.执行GenDirTree.py建立文件夹结构
+5.执行MergeSourceCodes.py合并代码
